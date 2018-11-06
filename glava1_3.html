@@ -1,0 +1,578 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Средства описания таблиц в HTML</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=koi8-r">
+<META content="MSHTML 6.00.2712.300" name=GENERATOR></HEAD>
+<BODY background="">
+<P>&nbsp; <BASEFONT size=4>
+<P><B>
+<CENTER>1.5. Средства описания таблиц в HTML</CENTER></B>
+<P></P><FONT size=-1>
+<P align=justify>По мере роста системы WWW стало ясно, что средств, которые 
+заложены в НТМL, не достаточно для качественного отображения различного типа 
+документов. Недостатком НТМL было отсутствие в его составе средств отображения 
+таблиц. Для этой цели обычно использовался предформатированный текст (тэг 
+&lt;PRE&gt;), в котором таблица обрисовывалась символами АSСII. Но такая форма 
+представления таблиц была недостаточно высокого качества и выделялась из общего 
+стиля документа. 
+<P><B>
+<CENTER><I>Тэг &lt;ТАВLЕ&gt;.</I></CENTER></B>
+<P></P><FONT size=-1>
+<P align=justify>Для описания таблиц служит тэг &lt;ТАВLЕ&gt;. Тэг 
+&lt;ТАВLЕ&gt;, как и многие другие, автоматически переводит строку до и после 
+таблицы. 
+<P><B>
+<CENTER><I>Тэг &lt;ТR&gt; </I></CENTER></B>
+<P></P><FONT size=-1>
+<P align=justify>Тэг &lt;ТR&gt; (сокращение от Таble Row - строка таблицы) 
+создает строку таблицы. Если в таблице содержится два набора тэгов 
+&lt;ТR&gt;&lt;/ТR&gt;, в ней будут две строки. Весь текст, другие тэги и 
+атрибуты, которые вы хотите поместить в одну строку, должны быть помещены между 
+тэгами &lt;ТR&gt;&lt;/ТR&gt;. <I>
+<P align=justify><A name=prim1.10>Пример 1.10</A> </I><PRE>	&lt;HTML&gt; 
+	&lt;BODY&gt; 
+	&lt;H1 ALIGN=CENTER&gt;Таблица&lt;/H1&gt;
+	&lt;CENTER&gt; 
+	&lt;TABLE BORDER&gt; 
+	&lt;TR&gt; 
+	&lt;TD COLSPAN=3&gt;Если в таблице два тэга
+	 &lt;TR&gt; то в ней две строки.&lt;/TD&gt; 
+	&lt;/TR&gt; 
+	&lt;TR&gt; 
+	&lt;TD&gt;Если в строке три тэга &lt;TD&gt; &lt;/TD&gt;
+	&lt;TD&gt;то в ней &lt;/TD&gt; 
+	&lt;TD&gt;три столбца.&lt;/TD&gt; 
+	&lt;/TR&gt; 
+	&lt;/TABLE&gt; 
+	&lt;/CENTER&gt; 
+	&lt;/BODY&gt; 
+	&lt;/HTML&gt; 
+</PRE>
+<P><IMG src="image406.gif"> <I>
+<P>Рис. 1.11. Использование тэгов TR и TD</A></I> 
+<P><A 
+href="javascript:window.open('pr110.html','example','toolbar,location,status,scrollbars,resizable,width=500,height=200,left=400');void(0);">Щелкните 
+здесь, чтобы просмотреть пример 1.10 в браузере</A></P>
+<P><B>
+<CENTER><I>Тэг &lt;ТD&gt; </I></CENTER></B>
+<P></P><FONT size=-1>
+<P align=justify>Внутри строки таблицы обычно размещаются ячейки с данными, 
+Каждая ячейка, содержащая текст или изображение, должна быть окружена тэгами 
+&lt;ТD&gt;&lt;/ТD&gt;. Число тэгов &lt;ТD&gt;&lt;/ТD&gt; в строке определяет 
+число ячеек. Строка с пятью парами тэгов &lt;ТD&gt;&lt;/ТD&gt; будет состоять из 
+пяти ячеек. <I>
+<P align=justify><A name=prim1.11>Пример 1.11</A> </I><PRE>	&lt;HTML&gt; 
+	&lt;BODY&gt; 
+	&lt;TABLE BORDER&gt;
+	&lt;TR&gt; 
+	&lt;TD&gt;В&lt;/TD&gt; 
+	&lt;TD&gt;этой&lt;/TD&gt; 
+	&lt;TD&gt;строке&lt;/TD&gt; 
+	&lt;TD&gt;пять&lt;/TD&gt; 
+	&lt;TD&gt;столбцов&lt;/TD&gt; 
+	&lt;/TR&gt; 
+	&lt;TR&gt; 
+	&lt;TD&gt;а в этой&lt;/TD&gt; 
+	&lt;TD&gt;только&lt;/TD&gt; 
+	&lt;TD&gt;три.&lt;/TD&gt;
+	&lt;/TR&gt; 
+	&lt;/TABLE&gt; 
+	&lt;/BODY&gt; 
+	&lt;/HTML&gt; 
+</PRE>
+<P><IMG src="image407.gif"> <I>
+<P>Рис. 1.12. В разных строках возможно задать разное количество 
+столбцов</A></I> 
+<P><A 
+href="javascript:window.open('pr111.html','example','toolbar,location,status,scrollbars,resizable,width=500,height=200,left=400');void(0);">Щелкните 
+здесь, чтобы просмотреть пример 1.11 в браузере</A></P>
+<P><B>
+<CENTER><I>Тэг &lt;ТН&gt; </I></CENTER></B>
+<P></P><FONT size=-1>
+<P align=justify>При задании заголовков для столбцов и строк таблицы 
+используются тэг заголовка &lt;ТН&gt;&lt;/ТН&gt; (Таblе Неаder, заголовок 
+таблицы). Эти тэги аналогичны &lt;ТD&gt;&lt;/ТD&gt;. Отличие состоит в том, что 
+текст, заключенный между тэгами &lt;ТН&gt;&lt;/ТН&gt;, автоматически 
+записывается жирным шрифтом и по умолчанию располагается посередине ячейки. 
+Центрирование можно отменить и выровнять текст по левому или правому краю. Если 
+воспользоваться &lt;ТD&gt;&lt;/ТD&gt; с тэгом &lt;В&gt; и атрибутом 
+&lt;АLIGN=CENTER&gt;, текст тоже будет выглядеть как заголовок. Однако, следует 
+иметь в виду, что не все броузеры поддерживают жирный шрифт в таблицах, поэтому 
+лучше задавать заголовки таблиц с помощью &lt;ТН&gt;. <I>
+<P align=justify><A name=prim1.12>Пример 1.12</A> </I><PRE>	&lt;HTML&gt; 
+	&lt;BODY&gt; 
+	&lt;TABLE BORDER&gt; 
+	&lt;TR&gt; 
+	&lt;TH&gt;Заголовок центрирован по умолчанию&lt;/TH&gt; 
+	&lt;TH COLSPAN=2&gt;Заголовок может объединять 
+	столбцы&lt;/TH&gt; 
+	&lt;/TR&gt; 
+	&lt;TR&gt; 
+	&lt;TH&gt;Заголовок может быть расположен
+	 перед столбцами&lt;/TH&gt;
+	&lt;TD&gt;Текст или данные&lt;/TD&gt; 
+	&lt;TD&gt;Текст или данные&lt;/TD&gt; 
+	&lt;/TR&gt; 
+	&lt;TR&gt; 
+	&lt;TH ROWSPAN=3&gt; Заголовок может 
+	объединять строки&lt;/TH&gt;
+	&lt;TD&gt;Текст или данные&lt;/TD&gt; 
+	&lt;TD&gt;Текст или данные&lt;/TD&gt; 
+	&lt;/TR&gt; 
+	&lt;TR&gt; 
+	&lt;TD&gt;Текст или данные&lt;/TD&gt; 
+	&lt;TD&gt;Текст или данные&lt;/TD&gt; 
+	&lt;/TR&gt; 
+	&lt;TR&gt; 
+	&lt;TD&gt;Текст или данные&lt;/TD&gt; 
+	&lt;TD&gt;Текст или данные&lt;/TD&gt; 
+	&lt;/TR&gt; 
+	&lt;/TABLE&gt; 
+	&lt;/BODY&gt; 
+	&lt;/HTML&gt;
+</PRE>
+<P><IMG src="image408.gif"> <I>
+<P>Рис. 1.13. Тэг заголовков для столбцов и строк TH и его атрибуты COLSPAN= и 
+ROWSPAN=</A></I> 
+<P><A 
+href="javascript:window.open('pr112.html','example','toolbar,location,status,scrollbars,resizable,width=500,height=300,left=400');void(0);">Щелкните 
+здесь, чтобы просмотреть пример 1.12 в браузере</A></P>
+<P><B>
+<CENTER><I>Тэг &lt;САРТIОN&gt; </I></CENTER></B>
+<P></P><FONT size=-1>
+<P align=justify>&lt;CAPTION&gt; позволяет создавать заголовки таблицы. По 
+умолчанию заголовки центрируются и размещаются либо над (&lt;САРТION 
+АLIGN=ТОР&gt;), либо под таблицей (&lt;САРТION ALIGN=ВОТТОМ&gt;). Заголовок 
+может состоять из любого текста и изображений. Текст будет разбит на строки, 
+соответствующие ширине таблицы. Иногда тэг &lt;САРТION&gt; используется для 
+подписи под рисунком. Для этого достаточно описать таблицу без границ. 
+<P align=justify>Заголовок может состоять из любого текста и изображений. Текст 
+будет разбит на строки, соответствующие ширине таблицы. Иногда тэг 
+&lt;САРТION&gt; используется для подписи под рисунком. Для этого достаточно 
+описать таблицу без границ. <I>
+<P align=justify><A name=prim1.13>Пример 1.13</A> </I><PRE>	&lt;HTML&gt; 
+	&lt;BODY&gt; 
+	&lt;TABLE BORDER&gt; 
+	&lt;CAPTION ALIGN=TOP&gt;Заголовок над 
+	таблицей&lt;/CAPTION&gt;
+	&lt;TR&gt; 
+	&lt;TD&gt;Текст или данные&lt;/TD&gt; 
+	&lt;TD&gt;Текст или данные&lt;/TD&gt; 
+	&lt;TD&gt;Текст или данные&lt;/TD&gt; 
+	&lt;TD&gt;Текст или данные&lt;/TD&gt; 
+	&lt;/TR&gt; 
+	&lt;/TABLE&gt; 
+	&lt;TABLE BORDER&gt; 
+	&lt;CAPTION ALIGN=BOTTOM&gt;Заголовок 
+	под таблицей&lt;/CAPTION&gt;
+	&lt;TR&gt; 
+	&lt;TD&gt;Текст или данные&lt;/TD&gt; 
+	&lt;TD&gt;Текст или данные&lt;/TD&gt; 
+	&lt;TD&gt;Текст или данные&lt;/TD&gt; 
+	&lt;TD&gt;Текст или данные&lt;/TD&gt; 
+	&lt;/TR&gt; 
+	&lt;/TABLE&gt; 
+	&lt;/BODY&gt; 
+	&lt;/HTML&gt;
+</PRE>
+<P><IMG src="image409.gif"> <I>
+<P>Рис. 1.14. Тэг заголовка CAPTION</A></I> 
+<P><A 
+href="javascript:window.open('pr113.html','example','toolbar,location,status,scrollbars,resizable,width=500,height=200,left=400');void(0);">Щелкните 
+здесь, чтобы просмотреть пример 1.13 в браузере</A></P>
+<P><B>
+<CENTER><I>Атрибут NOWRAP </I></CENTER></B>
+<P></P><FONT size=-1>
+<P align=justify>Обычно любой текст в таблице, не помещающийся в одну строку 
+ячейки, переходит на следующую строку. Однако, при использовании атрибута NOWARP 
+с тэгами &lt;ТН&gt; или &lt;ТD&gt; длина ячейки расширяется на столько, чтобы, 
+заключенный в ней текст поместился в одну строку. 
+<P><B>
+<CENTER><I>Атрибут СОLSPAN= </I></CENTER></B>
+<P></P><FONT size=-1>
+<P align=justify>Тэги &lt;ТD&gt; и &lt;ТН&gt; модифицируются с помощью атрибута 
+СОLSPAN= (Column Span, соединение столбцов). Если вы хотите сделать какую-нибудь 
+ячейку шире, чем верхняя или нижняя, можно воспользоваться атрибутом СОLSPAN=, 
+чтобы растянуть ее над любым количеством обычных ячеек. <I>
+<P align=justify><A name=prim1.14>Пример 1.14&lt;&gt;/a </I><PRE>	&lt;HTML&gt; 
+	&lt;BODY&gt; 
+	&lt;CENTER&gt; 
+	&lt;TABLE BORDER=3&gt; 
+	&lt;TR&gt; 
+	&lt;TD&gt; 
+	Если вы хотите сделать какую-нибудь ячейку 
+	шире, чем верхняя или нижняя, 
+	&lt;/TD&gt; 
+	&lt;TD&gt; 
+	можно воспользоваться атрибутом СОLSPAN=,
+	&lt;/TD&gt; 
+	&lt;/TR&gt; 
+	&lt;TR&gt; 
+	&lt;TD BGCOLOR=WHITE COLSPAN=2&gt;
+	чтобы растянуть ее над любым количеством 
+	обычных ячеек.
+	&lt;/TD&gt; 
+	&lt;/TR&gt; 
+	&lt;/TABLE&gt; 
+	&lt;/CENTER&gt; 
+	&lt;/BODY&gt; 
+	&lt;/HTML&gt;
+</PRE>
+<P><IMG src="image410.gif"> <I>
+<P>Рис. 1.15. Атрибут COLSPAN=</A></I> 
+<P><A 
+href="javascript:window.open('pr114.html','example','toolbar,location,status,scrollbars,resizable,width=500,height=200,left=400');void(0);">Щелкните 
+здесь, чтобы просмотреть пример 1.14 в браузере</A></P>
+<P><B>
+<CENTER><I>Атрибут ROWSPAN= </I></CENTER></B>
+<P></P><FONT size=-1>
+<P align=justify>Атрибут ROWSPAN=, используемый в тэгах &lt;ТD&gt; и &lt;ТН&gt;, 
+аналогичен атрибуту СОLSPAN=, только он задает число строк, на которые 
+растягивается ячейка. Если вы указали в атрибуте ROWSPAN= число, большее 
+единицы, то соответствующее количество строк должно находиться под растягиваемой 
+ячейкой. Нельзя поместить ее внизу таблицы. 
+<P><B>
+<CENTER><I>Атрибут WIDТН= </I></CENTER></B>
+<P></P><FONT size=-1>
+<P align=justify>Атрибут WIDТН= применяется в двух случаях. Можно поместить его 
+в тэг &lt;ТАВLЕ&gt; для задания ширины всей таблицы, а можно использовать в 
+тэгах &lt;ТR&gt; или &lt;ТН&gt; для задания ширины ячейки или группы ячеек. 
+Ширину можно указывать в пикселях или в процентах. Например, если вы задали в 
+тэге &lt;ТАВLЕ&gt; WIDTH=250, вы получите таблицу шириной 250 пикселей 
+независимо от размера страницы на мониторе. При задании WIDТН=50% в тэге 
+&lt;ТАВLЕ&gt; таблица будет занимать половину ширины страницы при любом размере 
+изображения на экране. Так что, указывая ширину таблицы в пикселях имейте в 
+виду, что если у вашего читателя узкая область просмотра, ваша страница может 
+выглядеть несколько странно. Если вы пользуетесь пикселями и таблица оказывается 
+шире области просмотра, внизу появится полоса прокрутки для перемещения вправо и 
+влево по странице. В зависимости от поставленных задач и тот, и другой способ 
+задания ширины таблицы могут оказаться полезными. <I>
+<P align=justify><A name=prim1.15>Пример 1.15</A> </I><PRE>	&lt;HTML&gt; 
+	&lt;BODY&gt; 
+	&lt;TABLE BORDER WIDTH=100%&gt; 
+	&lt;TR&gt; 
+	&lt;TD ALIGN=CENTER&gt;Текст или данные - ширина 100%
+	&lt;/TR&gt; 
+	&lt;/TABLE&gt; 
+</PRE>или<PRE> 
+	&lt;TABLE BORDER WIDTH=50%&gt; 
+	&lt;TR&gt; 
+	&lt;TD ALIGN=CENTER&gt;Текст или данные - 
+	ширина 50%&lt;/TD&gt;
+	&lt;/TR&gt; 
+	&lt;/TABLE&gt; 
+</PRE>или<PRE> 
+	&lt;TABLE BORDER WIDTH=200&gt; 
+	&lt;TR&gt; 
+	&lt;TD ALIGN=CENTER&gt;Текст или данные - 
+	ширина 200 пикселей&lt;/TD&gt;
+	&lt;/TR&gt; 
+	&lt;/TABLE&gt; 
+</PRE>или<PRE> 
+	&lt;TABLE BORDER WIDTH=100&gt; 
+	&lt;TR&gt; 
+	&lt;TD ALIGN=CENTER&gt;Текст или данные - 
+	ширина 100 пикселей&lt;/TD&gt; 
+	&lt;/TR&gt; 
+	&lt;/TABLE&gt; 
+	&lt;/BODY&gt; 
+	&lt;/HTML&gt;
+</PRE>
+<P><IMG src="image411.gif"> <I>
+<P>Рис. 1.16. Атрибут WIDTH=</A></I> 
+<P><A 
+href="javascript:window.open('pr115.html','example','toolbar,location,status,scrollbars,resizable,width=500,height=320,left=400');void(0);">Щелкните 
+здесь, чтобы просмотреть пример 1.15 в браузере</A></P>
+<P><B>
+<CENTER><I>Атрибут UNIТ= </I></CENTER></B>
+<P></P><FONT size=-1>
+<P align=justify>Атрибут UNIT= тэга &lt;ТАВLЕ&gt; определяет единицы измерения, 
+используемые при указании размеров как всей таблицы, так и ее отдельных 
+столбцов. Атрибут UNIТ= может принимать три значения: 
+<P align=justify>UNIТ=ЕN - это значение присваивается по умолчанию и задает 
+единицу измерения, равную еn-пробелу. Еn-пробел - это типографская единица 
+измерения, равная ширине буквы &lt;n&gt;. Реальный размер пробела зависит от 
+выбранного шрифта: для крупного шрифта еn-пробел больше, чем для мелкого. Обычно 
+еn-пробел равен половине размера шрифта. Например, при использовании 
+12-пунктового шрифта ширина еn-пробела будет 6 пунктов. Для 8-пунктового шрифта 
+еn-пробел занимает 4 пункта. 
+<P align=justify>UNIТ=RELATIVE используется для задания относительной ширины 
+столбцов в процентах от общей ширины таблицы. Этот способ следует по возможности 
+применять вместо указания ширины в процентах UNIТ=RELATIVE выполняет ту же 
+функцию, но поддерживается большим количеством броузеров.) При задании 
+относительных (RELATIVE) единиц вводимые числа воспринимаются как ширина 
+столбцов в процентах. 
+<P align=justify>UNIТ=РIXELS - это значение применяется, когда вам нужно точно 
+знать ширину столбца на экране. В этом случае лучше всего задать ее в пикселях. 
+Например, тэг &lt;ТАВLЕ UNIТ=РIXELS WIDTH=340&gt; сформирует таблицу шириной 340 
+пикселей. 
+<P><B>
+<CENTER><I>Атрибут СОLSРЕС= </I></CENTER></B>
+<P></P><FONT size=-1>
+<P align=justify>Атрибут СОLSРЕС=, используемый с атрибутом UNIТ=, определяет, 
+сколько места занимает каждый столбец таблицы и как в нем выравниваются данные. 
+Применяется только в тэге&lt;ТАВLЕ&gt;. 
+<P align=justify>СОLSРЕС= перечисляет все столбцы и для каждого из них задает 
+выравнивание и размер. Для столбца (или ячейки) существует пять способов 
+выравнивания: L - по левому краю, С - по центру, R - по правому краю, J - по 
+правому и левому краю и D - по десятичной запятой. Если у вас пять столбцов, вы 
+можете определить ширину и выравнивание каждого из них следующим образом: <PRE>	&lt;ТАВLЕ UNIТ=РIХЕLS СОLSРЕС="L10 С15 J25 D30"&gt;  </PRE>
+<P align=justify>Вы описали таблицу, в которой первый столбец имеет ширину 10 
+пикселей и его содержимое выравнивается по левому краю, второй столбец, шириной 
+15 пикселей, с выравниванием по центру, третий, шириной 20 пикселей, выровнен по 
+правому краю, четвертый, шириной 25 пикселей, выровнен с двух сторон, а пятый, 
+шириной 30 пикселей, выравнивается по десятичным запятым. 
+<P><B>
+<CENTER><I>Атрибут DР= </I></CENTER></B>
+<P></P><FONT size=-1>
+<P align=justify>Атрибут DР= (Decimal Point, десятичный знак) определяет символ, 
+используемый для отделения целой части десятичной дроби. DР="." (по умолчанию) 
+указывает на точку в качестве десятичного символа. DР="," задает запятую. 
+<P><B>
+<CENTER><I>Пустые ячейки </I></CENTER></B>
+<P></P><FONT size=-1>
+<P align=justify>Если ячейка не содержит данных, она не будет иметь границ. Если 
+вы хотите, чтобы у ячейки были границы, но не было содержимого, вы должны 
+поместить в нее что-то, что не будет видно при просмотре. Можно воспользоваться 
+пустой строкой &lt;ВR&gt;. Можно даже задать пустые столбцы, определив их ширину 
+в пикселях или относительных единицах и не введя в полученные ячейки никаких 
+данных. Это средство может оказаться полезным при размещении текста и графики на 
+странице. 
+<P><B>
+<CENTER><I>Атрибут СЕLLРАDDING= </I></CENTER></B>
+<P></P><FONT size=-1>
+<P align=justify>Атрибут СЕLLPADDING= определяет ширину пустого пространства 
+между содержимым ячейки и ее границами, то есть задает поля внутри ячейки. <I>
+<P align=justify><A name=prim1.16>Пример 1.16</A> </I><PRE>	&lt;HTML&gt; 
+	&lt;BODY&gt; 
+	&lt;CENTER&gt; 
+	&lt;TABLE BORDER CELLPADDING=20&gt;
+	&lt;TR&gt; 
+	&lt;TD&gt;Текст или данные&lt;/TD&gt; 
+	&lt;TD&gt;Текст или данные&lt;/TD&gt; 
+	&lt;TD&gt;Текст или данные&lt;/TD&gt; 
+	&lt;/TR&gt; 
+	&lt;TR&gt; 
+	&lt;TD&gt;Текст или данные&lt;/TD&gt; 
+	&lt;TD&gt;Текст или данные&lt;/TD&gt; 
+	&lt;TD&gt;Текст или данные&lt;/TD&gt; 
+	&lt;/TR&gt; 
+	&lt;/TABLE&gt; 
+	&lt;BR&gt; 
+	&lt;TABLE BORDER CELLPADDING=O&gt;
+	&lt;TR&gt; 
+	&lt;TD&gt;Текст или данные&lt;/TD&gt; 
+	&lt;TD&gt;Текст или данные&lt;/TD&gt; 
+	&lt;TD&gt;Текст или данные&lt;/TD&gt; 
+	&lt;/TR&gt; 
+	&lt;TR&gt; 
+	&lt;TD&gt;Текст или данные&lt;/TD&gt; 
+	&lt;TD&gt;Текст или данные&lt;/TD&gt; 
+	&lt;TD&gt;Текст или данные&lt;/TD&gt; 
+	&lt;/TR&gt; 
+	&lt;/TABLE&gt; 
+	&lt;/CENTER&gt; 
+	&lt;/BODY&gt; 
+	&lt;/HTML&gt;
+</PRE>
+<P><IMG src="image412.gif"> <I>
+<P>Рис. 1.17. Атрибут CELLPADDING= определяющий ширину полей</I> 
+<P><A 
+href="javascript:window.open('pr116.html','example','menubar,toolbar,location,status,scrollbars,resizable,width=500,height=320,left=400');void(0);">Щелкните 
+здесь, чтобы просмотреть пример 1.16 в браузере</A></P>
+<P><B>
+<CENTER><I>Атрибуты АLIGN= и VALIGN= </I></CENTER></B>
+<P></P><FONT size=-1>
+<P align=justify>Тэги &lt;ТR&gt;, &lt;ТD&gt; и &lt;ТН&gt; можно модифицировать с 
+помощью атрибутов ALIGN= и VALIGN=. Атрибут АLIGN определяет выравнивание текста 
+и графики по горизонтали, то есть по левому или правому краю, либо по центру, 
+как видно из рис. . Горизонтальное выравнивание может быть задано несколькими 
+способами: 
+<DIR><BR><TT>ALIGN=ВLЕЕDLEFT </TT>Прижимает содержимое ячейки вплотную к левому 
+краю. <BR><TT>ALIGN=LEFT </TT>Выравнивает содержимое ячейки по левому краю с 
+учетом отступа, заданного атрибутом СЕLLPADDING=. <BR><TT>АLIGN=СЕNTER 
+</TT>Располагает содержимое ячейки по центру. <BR><TT>АLIGN=RIGHT 
+</TT>Выравнивает содержимое ячейки по правому краю с учетом отступа, заданного 
+атрибутом СЕLLPADDING=. </DIR><I>
+<P align=justify><A name=prim1.17>Пример 1.17</A> </I><PRE>	&lt;HTML&gt;
+	&lt;BODY&gt;
+	&lt;TABLE BORDER WIDTH=100%&gt; 
+	&lt;TR&gt; 
+	&lt;TD ALIGN=LEFT&gt;Текст или данные1&lt;/TD&gt;
+	&lt;TD ALlGN=CENTER&gt;Текст или данные2&lt;/TD&gt;
+	&lt;TD ALIGN=RIGHT&gt;Текст или данные3&lt;/TD&gt;
+	&lt;/TR&gt; 
+	&lt;TR&gt; 
+	&lt;TD ALIGN=RIGHT&gt;Текст или данные4&lt;/TD&gt;
+	&lt;TD ALIGN=CENTER&gt;Текст или данные5&lt;/TD&gt;
+	&lt;TD ALIGN=LEFT&gt;Текст или данные6&lt;/TD&gt;
+	&lt;/TR&gt; 
+	&lt;TR&gt; 
+	&lt;TD ALIGN=RIGHT&gt;Текст или данные7&lt;/TD&gt;
+	&lt;TD ALIGN=RIGHT&gt;Текст или данные8&lt;/TD&gt;
+	&lt;TD ALIGN=RIGHT&gt;Текст или данные9&lt;/TD&gt;
+	&lt;/TR&gt; 
+	&lt;TR&gt; 
+	&lt;TD ALIGN=CENTER&gt;Текст или данные10&lt;/TD&gt;
+	&lt;TD ALIGN=CENTER&gt;Текст или данные11&lt;/TD&gt;
+	&lt;TD ALIGN=CENTER&gt;Текст или данные12&lt;/TD&gt;
+	&lt;/TR&gt; 
+	&lt;TR&gt; 
+	&lt;TD ALIGN=LEFT&gt;Текст или данные13&lt;/TD&gt;
+	&lt;TD ALIGN=LEFT&gt;Текст или данные14&lt;/TD&gt;
+	&lt;TD ALIGN=LEFT&gt;Текст или данные15&lt;/TD&gt;
+	&lt;/TR&gt; 
+	&lt;/TABLE&gt; 
+	&lt;/BODY&gt; 
+	&lt;/HTML&gt; 
+</PRE>
+<P><IMG src="image413.gif"> <I>
+<P>Рис. 1.18. Атрибут ALIGN= выравнивания содержимого ячеек таблицы по 
+горизонтали</I> 
+<P><A 
+href="javascript:window.open('pr117.html','example','menubar,toolbar,location,status,scrollbars,resizable,width=670,height=200,left=310');void(0);">Щелкните 
+здесь, чтобы просмотреть пример 1.17 в браузере</A></P>
+<P align=justify>Атрибут VALIGN= осуществляет выравнивание текста и графики 
+внутри ячейки по вертикали. . Вертикальное выравнивание может быть задано 
+несколькими способами: VALIGN=ТОР Выравнивает содержимое ячейки по ее верхней 
+границе. 
+<DIR><BR><TT>VALIGN=МIDDLE</TT> Центрирует содержимое ячейки по вертикали. 
+<BR><TT>VALIGN=ВОТТОМ</TT> Выравнивает содержимое ячейки по ее нижней 
+границе.</DIR><I>
+<P align=justify><A name=prim1.18>Пример 1.18</A> </I><PRE>	&lt;HTML&gt; 
+	&lt;BODY&gt; 
+	&lt;CENTER&gt; 
+	&lt;TABLE BORDER WIDTH=90%&gt; 
+	&lt;TR&gt; 
+	&lt;TD WIDTH=100&gt; Атрибут VALIGN= осуществляет
+	 выравнивание текста и 
+	графики внутри ячейки по вертикали.  
+	&lt;/TD&gt; 
+	&lt;TD VALIGN=TOP&gt;верх,&lt;/TD&gt; 
+	&lt;TD VALIGN=MIDDLE&gt;середина,&lt;/TD&gt; 
+	&lt;TD VALIGN=BOTTOM&gt;низ.&lt;/TD&gt; 
+	&lt;/TR&gt; 
+	&lt;TR VALIGN=TOP&gt; 
+	&lt;TD&gt; VALIGN=ТОР Выравнивает содержимое 
+	ячейки по ее верхней границе.
+	&lt;/TD&gt;
+	&lt;TD&gt;верх,&lt;/TD&gt; 
+	&lt;TD&gt;верх,&lt;/TD&gt; 
+	&lt;TD&gt;верх.&lt;/TD&gt; 
+	&lt;/TR&gt; 
+	&lt;TR VALIGN=middle&gt; 
+	&lt;TD&gt; VALIGN=МIDDLE Центрирует содержимое 
+	ячейки по вертикали. 
+	&lt;/TD&gt;
+	&lt;TD&gt;середина,&lt;/TD&gt; 
+	&lt;TD&gt;середина,&lt;/TD&gt; 
+	&lt;TD&gt;середина.&lt;/TD&gt; 
+	&lt;/TR&gt; 
+	&lt;TR VALIGN=bottom&gt; 
+	&lt;TD&gt; VALIGN=ВОТТОМ Выравнивает содержимое 
+	ячейки по ее нижней границе.
+	&lt;/TD&gt;
+	&lt;TD&gt;низ,&lt;/TD&gt; 
+	&lt;TD&gt;низ,&lt;/TD&gt; 
+	&lt;TD&gt;низ.&lt;/TD&gt; 
+	&lt;/TR&gt; 
+	&lt;/TABLE&gt; 
+	&lt;/CENTER&gt; 
+	&lt;/BODY&gt; 
+	&lt;/HTML&gt;
+</PRE>
+<P><IMG src="image414.gif"> <I>
+<P>Рис. 1.19. Атрибут VALIGN= осуществляет выравнивание текста и графики внутри 
+ячейки по вертикали.</I> 
+<P><A 
+href="javascript:window.open('pr118.html','example','menubar,toolbar,location,status,scrollbars,resizable,width=500,height=500,left=400,top=100');void(0);">Щелкните 
+здесь, чтобы просмотреть пример 1.18 в браузере</A></P>
+<P><B>
+<CENTER><I>Атрибут ВОRDER= </I></CENTER></B>
+<P></P><FONT size=-1>
+<P align=justify>В тэге &lt;ТАВLЕ&gt; часто определяют, как будут выглядеть 
+рамки, то есть линии, окружающие ячейки таблицы и саму таблицу. Если вы не 
+зададите рамку, то получите таблицу без линий, но пустое пространство для них 
+будет отведено. Того же результата можно добиться, задав &lt;ТАВLЕ ВОRDER=0&gt;. 
+Иногда хочется сделать границу потолще, чтобы она лучше выделялась. Можно для 
+привлечения внимания к рисунку или тексту задать исключительно жирные границы. 
+При создании вложенных таблиц приходится делать границы различной толщины для 
+разных таблиц, чтобы их легче было различать. 
+<P><B>
+<CENTER><I>Атрибут СЕLLSPACING= </I></CENTER></B>
+<P></P><FONT size=-1>
+<P align=justify>Атрибут СЕLLSPACING= определяет в пикселях ширину промежутков 
+между ячейками. Если этот атрибут не задан, по умолчанию задается величина, 
+равная двум пикселям. Атрибут СЕLLSPASING= можно использовать, чтобы поместить 
+текст и графику непосредственно там, где вам нужно. Если вы хотите оставить 
+пустое место, можно вписать в ячейку пробел. <I>
+<P align=justify><A name=prim1.19>Пример 1.19</A> </I><PRE>	&lt;HTML&gt; 
+	&lt;BODY&gt; 
+	&lt;CENTER&gt; 
+	&lt;TABLE BORDER CELLSPACING=20&gt;
+	&lt;TR&gt; 
+	&lt;TD&gt;Текст или данные1&lt;/TD&gt; 
+	&lt;TD&gt;Текст или данные2&lt;/TD&gt; 
+	&lt;TD&gt;Текст или данные3&lt;/TD&gt; 
+	&lt;/TR&gt; 
+	&lt;TR&gt; 
+	&lt;TD&gt;Текст или данные4&lt;/TD&gt; 
+	&lt;TD&gt;Текст или данные5&lt;/TD&gt; 
+	&lt;TD&gt;Текст или данные6&lt;/TD&gt; 
+	&lt;/TR&gt; 
+	&lt;/TABLE&gt; 
+	&lt;TABLE CELLSPACING=20&gt; 
+	&lt;TR&gt; 
+	&lt;TD&gt;Текст или данные7&lt;/TD&gt; 
+	&lt;TD&gt;Текст или данные8&lt;/TD&gt; 
+	&lt;TD&gt;Текст или данные9&lt;/TD&gt; 
+	&lt;/TR&gt; 
+	&lt;TR&gt; 
+	&lt;TD&gt;Текст или данные10&lt;/TD&gt;
+	&lt;TD&gt;Текст или данные11&lt;/TD&gt;
+	&lt;TD&gt;Текст или данные12&lt;/TD&gt;
+	&lt;/TR&gt; 
+	&lt;/TABLE&gt;
+	&lt;TABLE BORDER CELLSPACING=2&gt;
+	&lt;TR&gt; 
+	&lt;TD&gt;Текст или данные13&lt;/TD&gt;
+	&lt;TD&gt;Текст или данные14&lt;/TD&gt;
+	&lt;TD&gt;Текст или данные15&lt;/TD&gt;
+	&lt;/TR&gt; 
+	&lt;TR&gt; 
+	&lt;TD&gt;Текст или данные16&lt;/TD&gt;
+	&lt;TD&gt;&lt;/TD&gt; 
+	&lt;TD&gt;Текст или данные17&lt;/TD&gt;
+	&lt;/TR&gt; 
+	&lt;/TABLE&gt; 
+	&lt;BR&gt;
+	&lt;TABLE BORDER CELLSPACING=0&gt;
+	&lt;TR&gt; 
+	&lt;TD&gt;Текст или данные18&lt;/TD&gt;
+	&lt;TD&gt;Текст или данные19&lt;/TD&gt;
+	&lt;TD&gt;Текст или данные20&lt;/TD&gt;
+	&lt;/TR&gt; 
+	&lt;TR&gt; 
+	&lt;TD&gt;Текст или данные21&lt;/TD&gt;
+	&lt;TD&gt;&lt;/TD&gt; 
+	&lt;TD&gt;Текст или данные22&lt;/TD&gt;
+	&lt;/TR&gt; 
+	&lt;/TABLE&gt; 
+	&lt;/CENTER&gt; 
+	&lt;/BODY&gt; 
+	&lt;/HTML
+</PRE>
+<P><IMG src="image415.gif"> <I>
+<P>Рис. 1.20. Атрибут CELLSPACING= определяет ширину промежутков между 
+ячейками</I> 
+<P><A 
+href="javascript:window.open('pr119.html','example','menubar,toolbar,location,status,scrollbars,resizable,width=500,height=500,left=400,top=0');void(0);">Щелкните 
+здесь, чтобы просмотреть пример 1.19 в браузере</A></P></BASEFONT>
+<P>
+<CENTER>
+<P><FONT size=-1><A 
+href="glava1_2_10.html">Назад</A> 
+| <A 
+href="index.html">Содержание</A> 
+| <A 
+href="glava1_4.html">Вперед</A></FONT></CENTER></P>
+<CENTER></CENTER></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></FONT></BODY></HTML>

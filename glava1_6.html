@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Формы</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=koi8-r">
+<META content="MSHTML 6.00.2712.300" name=GENERATOR></HEAD>
+<BODY background="">
+<P>&nbsp; <BASEFONT size=4>
+<P><B>
+<CENTER>1.8. Формы </CENTER></B>
+<P></P><FONT size=-1>
+<P align=justify>Интерактивные формы позволяют читателям Web-страниц легко 
+общаться с их владельцами. Благодаря простоте использования тэга &lt;mailto:&gt; 
+и форм стал возможен двусторонний диалог между владельцами Web-узлов и их 
+читателями. Это открывает для Web-навигаторов увлекательные перспективы и 
+коммерческие возможности. К сожалению, многие старые броузеры не поддерживают 
+тэг &lt;mailto:&gt;. 
+<P><B>
+<CENTER><I>Как сделать так, чтобы ваша форма хорошо смотрелась </I></CENTER></B>
+<P></P><FONT size=-1>
+<P align=justify>Один из способов свести все трудности к минимуму состоит в том, 
+чтобы разместить области ввода и выпадающие меню в левой части страницы, а весь 
+сопроводительный текст - справа. Поскольку ширину областей ввода можно задать с 
+помощыо атрибута SIZЕ=, вы по крайней мере выровняете строки слева, а текст 
+справа будет невыровненным - как в большинстве документов. Такая форма выглядит 
+несколько аккуратнее. Не забудьте оставить промежуток между текстом и областью 
+ввода формы. Другой несколько более сложный способ - разместить элементы формы в 
+ячейки таблицы. Это позволяет разместить сопроводительный текст слева, а области 
+ввода справа. Это показано в примере. <I>
+<P align=justify><A name=prim1.26>Пример 1.26</A> </I><PRE>	&lt;HTML&gt;
+	&lt;HEAD&gt;
+	&lt;TITLE&gt;Коментарии&lt;/TITLE&gt;
+	&lt;/HEAD&gt;
+	&lt;BODY&gt;
+	&lt;H1&gt;Коментарии&lt;/H1&gt;
+	&lt;BR&gt;Пожалуйста сообщите нам, что вы думаете о нашем web сайте, компании, продукции, или услугах.
+        Если вы сообщите нам свою контактную информацию, у нас будет возможность связаться с вами 
+	и ответить на ваши вопросы.&lt;/p&gt;
+	&lt;FORM METHOD="POST" action="mailto: yourname@your.email.address"&gt;
+	&lt;H3&gt;Контактная информация&lt;/H3&gt;
+	&lt;TABLE BORDER="0"&gt;
+	&lt;TR&gt;
+	&lt;TD ALIGN="right"&gt;&lt;em&gt;Имя&lt;/em&gt;&lt;/td&gt;
+	&lt;TD&gt;&lt;input type="text" size="35" name="Name"&gt;&lt;/td&gt;
+	&lt;/TR&gt;
+	&lt;TR&gt;
+	&lt;TD ALIGN="right"&gt;&lt;em&gt;Тема&lt;/em&gt;&lt;/td&gt;
+	&lt;TD&gt;&lt;input type="text" size="35" name="Title"&gt;&lt;/td&gt;
+	&lt;/TR&gt;
+	&lt;TR&gt;
+	&lt;TD ALIGN="right"&gt;&lt;em&gt;Компания&lt;/em&gt;&lt;/td&gt;
+	&lt;TD&gt;&lt;input type="text" size="35" name="Company"&gt;&lt;/td&gt;
+	&lt;/TR&gt;
+	&lt;TR&gt;
+	&lt;TD ALIGN ="right"&gt;&lt;em&gt;Адрес&lt;/em&gt;&lt;/td&gt;
+	&lt;TD&gt;&lt;input type="text" size="35" name="Address"&gt;&lt;/td&gt;
+	&lt;/TR&gt;
+	&lt;TR&gt;
+	&lt;TD ALIGN ="right"&gt;&lt;em&gt;Телефон&lt;/em&gt;&lt;/td&gt;
+	&lt;TD&gt;&lt;input type="text" size="35" name="Telephone"&gt;&lt;/td&gt;
+	&lt;/TR&gt;
+	&lt;TR&gt;
+	&lt;TD ALIGN ="right"&gt;&lt;em&gt;Факс&lt;/em&gt;&lt;/td&gt;
+	&lt;TD&gt;&lt;input type="text" size="35" name="FAX"&gt;&lt;/td&gt;
+	&lt;/TR&gt;
+	&lt;TR&gt;
+	&lt;TD ALIGN ="right"&gt;&lt;em&gt;E-mail&lt;/em&gt;&lt;/td&gt;
+	&lt;TD&gt;&lt;input type="text" size="35" name="Email"&gt;&lt;/td&gt;
+	&lt;/TR&gt;
+	&lt;/TABLE&gt;
+	&lt;p&gt;&lt;input type="submit" value="Послать сообщение"&gt; 
+	&lt;input type="reset" value="Очистить форму"&gt; &lt;/p&gt;
+	&lt;/FORM&gt;
+	&lt;/BODY&gt;
+	&lt;/HTML&gt;
+</PRE>
+<P><IMG src="image422.gif"> <I>
+<P>Рис. 1.27. Вид экрана броузера с формами</I> 
+<P><A 
+href="javascript:window.open('pr126.html','example','menubar,toolbar,location,status,scrollbars,resizable,width=550,height=500,left=400,top=50');void(0);">Щелкните 
+здесь, чтобы просмотреть пример 1.26 в браузере</A></P>
+<P><B>
+<CENTER><I>Как заставить формы работать </I></CENTER></B>
+<P></P><FONT size=-1>
+<P align=justify>Возможно, это именно тот раздел, которого вы ждете - как 
+сделать так, чтобы формы отсылали на сервер введенные данные. На самом деле 
+заставить форму пересылать данные довольно просто. Главная проблема - понять, 
+куда их пересылать. Формально вы просто пишете в тэге &lt;FORM&gt; атрибут 
+АСТION= и задаете ссылку на URL программы, которая может обработать входные 
+данные и сделать с ними что-нибудь полезное.<BR>А теперь проверим как усвоен 
+материал. </BASEFONT>
+<P>
+<CENTER><FONT size=-1><A 
+href="glava1_5.html">Назад</A> 
+| <A 
+href="index.html">Содержание</A> 
+| <A 
+href="kontrol.html">Проверка 
+знаний</FONT></CENTER>
+<P></P>
+<CENTER></CENTER></A></FONT></FONT></FONT></BODY></HTML>

@@ -1,0 +1,199 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Общий обзор команд HTML</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=koi8-r">
+<META content="MSHTML 6.00.2712.300" name=GENERATOR></HEAD>
+<BODY>
+<P> 
+<P><B>
+<CENTER>1.2. Общий обзор команд HTML с помощью таблиц</CENTER></B>
+<P></P>
+<P>Для того, чтобы создать HTML-страницу, достаточно знать команды, их параметры 
+и немногие правила их использования, которые здесь рассматриваются. </P>
+<P> </P>
+<H4 align=center><A name=struct>1.2.1. Команды структуры</H4></A>
+<P><B>Общая структура HTML-текста </B>определяется командами, перечисленными в 
+<A 
+href="javascript:window.open('table-1.htm','example','scrollbars,resizable,width=800,height=600,left=0,top=0');void(0);">табл. 
+1</A> и всегда имеет вид</P><CODE><PRE> </CODE>   &lt;HTML&gt;
+    &lt;HEAD&gt;
+    ...
+    &lt;TITLE&gt; ... &lt;/TITLE&gt;
+    ...
+    &lt;/HEAD&gt;
+    &lt;BODY&gt;
+    ...
+    &lt;/BODY&gt;
+    &lt;/HTML&gt; </PRE>
+<TABLE borderColor=black cellPadding=6 align=center border=2>
+  <TBODY>
+  <TR>
+    <TD align=middle><B>Эти и только эти команды являются обязательными! 
+    </B></TD></TR></TBODY></TABLE>&nbsp; 
+<P>Например, простейшая страница определяется HTML-текстом</P>
+<TABLE align=right>
+  <TBODY>
+  <TR>
+    <TD><A 
+      href="javascript:window.open('ivanov.htm','example','scrollbars,resizable,width=600,height=400,left=0,top=0');void(0);" 
+      name=p5><IMG height=188 src="image10.gif" width=402 
+      align=left border=0></A> </TD></TR>
+  <TR>
+    <TD align=middle><B>Рис. 5.</B> Первая страница.</TD></TR></TBODY></TABLE>
+<P><KBD>&lt;HTML&gt;<BR>&lt;HEAD&gt; &lt;TITLE&gt; Иванов И.И. &lt;/TITLE&gt; 
+&lt;/HEAD&gt;<BR>&lt;BODY&gt;<BR>Моя первая 
+HTML-страница!<BR>&lt;/BODY&gt;<BR>&lt;/HTML&gt;<BR clear=all></KBD></P>
+<P>и в браузере выглядит, как на <A 
+href="glava0.html#p5">рис. 
+5</A> (имя файла и путь к нему видны на этом же рисунке в поле Address).</P>
+<P>Если сюда между <KBD>&lt;HEAD&gt;</KBD> и <KBD>&lt;/HEAD&gt;</KBD> вставить 
+команду&nbsp; </P>
+<P><KBD>&lt;bgsound src="file:///c:/WINDOWS/MEDIA/Tada.wav"&gt;,</KBD> </P>
+<P>то после загрузки страницы в браузер (при наличии звуковой платы и 
+операционной системы Windows, установленной в каталог c:\WINDOWS) прозвучит 
+знакомая музыкальная фраза (щёлкните по картинке рис.5). </P>
+<H4 align=center><B><A name=format>1.2.2. Команды форматирования текста</B></A> 
+</H4>
+<CENTER></CENTER>
+<P><B>Команды форматирования текста</B> описаны в <A 
+href="javascript:window.open('table-2.htm','example','fullscreen,scrollbars,resizable');void(0);">табл. 
+2</A>.</P><I><B>Шрифты</B></I>. Если в HTML-тексте не устанавливаются никакие 
+шрифты, то любой графический Web-браузер показывает страницу <B>только в двух 
+шрифтах</B> &#8211; одном <I>пропорциональном</I> (чаще <I>Times New Roman</I> или 
+<I>Arial</I>) и одном <I>моноширинном</I> (обычно <I>Courier New</I>). Браузер 
+позволяет выбрать любую пару таких шрифтов и их размер. Для задания шрифтов, 
+которые не может изменить пользователь, нужно воспользоваться командой 
+<CODE>&lt;FONT&gt;</CODE>. 
+<P>Всего в HTML-странице можно использовать только 7 различных размеров 
+символов, которым присвоены <I>условные</I> номера от 1 до 7. Один из них 
+считается <B>базовым</B> &#8211; это либо 3-й размер, либо тот, который установлен 
+командой &lt;BASEFONT&gt;. Командой &lt;FONT&gt; можно установить условный 
+размер символов либо прямо, либо указав, насколько он меньше или больше 
+базового. <I>Реальный</I> размер символов выбирается уже пользователем в 
+браузере. Точнее, в браузере можно установить реальный (в пунктах) базовый 
+размер шрифта, а остальные размеры определятся пропорционально.</P>
+<P><B><I>Цвета</I></B> текста, фона и других элементов страницы можно задавать 
+либо их именами (<I><CODE>black, gray, white, red, blue, green, yellow, 
+aqua</I></CODE> и т.д., несколько сот имён), либо строкой вида 
+<CODE>#rrggbb</CODE>. Здесь <CODE>rr</CODE> есть шестнадцатеричный номер одного 
+из 256 оттенков красного цвета (<CODE><I>Red</I></CODE> от 00 до FF = 255), 
+<CODE>gg</CODE> &#8211; шестнадцатеричный номер одного из 256 оттенков зелёного 
+(<CODE><I>Green</I>), bb</CODE> &#8211; номер одного из 256 оттенков синего 
+(<CODE><I>Blue</I></CODE>). Например, <CODE><I>blue</CODE></I> и #0000FF 
+определяют один и тот же синий цвет. Номера цветов можно взять в графическом 
+редакторе <CODE><I>Paint</CODE></I>, но их нужно переводить из десятичной 
+системы в шестнадцатеричную, например, с помощью программы 
+<CODE><I>Calculator</CODE></I> (см.<A 
+href="glava0.html#p6"> 
+рис.6</A>). </P>
+<TABLE cellSpacing=10 cellPadding=10 align=center border=0>
+  <TBODY>
+  <TR>
+    <TD><A name=p6><IMG height=324 src="image12.gif" width=224 
+      align=right></A></TD>
+    <TD><IMG height=323 src="image11.gif" width=140 
+  align=left></TD></TR>
+  <TR>
+    <TD align=middle colSpan=2><B>Рис. 6. </B>Получение номера цвета в 
+      программах <I>Paint</I> и 
+<I>Calculator</I>.</TD></TR></TBODY></TABLE><B><I>Некоторые символы 
+текста</I></B> нельзя в HTML печатать на клавиатуре. Их приходится передавать 
+<I>числовыми кодами</I> или <I>именами</I>, списки которых приводятся во многих 
+руководствах по Web. Некоторые из них приведены в <A 
+href="javascript:window.open('table-3.htm','example','scrollbars,resizable,width=600,height=600,left=0,top=0');void(0);">табл. 
+3</A>. Пример использования имени символа <B>&amp;nbsp; </B>&#8211; "неразрывный 
+пробел" &#8211; cм. на рис. 3. 
+<P>&nbsp;</P>
+<H4 align=center><A name=silka>1.2.3. Ссылки</H4></A>
+<CENTER></CENTER>
+<P><B><I>Ссылки</I></B> на графические (команда <CODE>&lt;IMG SRC=...&gt; 
+</CODE>в <A 
+href="javascript:window.open('table-4.htm','example','scrollbars,resizable,width=600,height=600,left=0,top=0');void(0);">табл. 
+4</A>), звуковые, и др. мультимедийные файлы, а также на другие HTML-страницы 
+(команда <CODE>&lt;A HREF=...&gt;</CODE> в <A 
+href="javascript:window.open('table-5.htm','example','scrollbars,resizable,width=600,height=600,left=0,top=0');void(0);">табл. 
+5</A>), расположенные на той же машине или в той же локальной сети, имеют 
+простой вид &#8211; это либо <I>полный путь </I>к файлу и имя файла, либо <I>путь 
+относительно папки,</I> в которой находится ваш HTML-файл, и имя целевого файла. 
+Ссылки записываются в кавычках.</P>
+<P><B><I>Примеры</I>:</B><BR><I>Полные адреса &#8211;</I><BR><CODE>&lt;IMG 
+SRC="D:/HTML/images/bird.jpg"&gt;</CODE><I>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;На 
+диске D: вашей машины</I><BR><CODE>&lt;IMG 
+SRC="//M1/Dsc1/HTML/images/bird.jpg"&gt;</CODE><I>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;На 
+диске Dsc1 сетевой машины М1.<BR></I><I>Относительные адреса 
+&#8211;</I><BR><CODE>&lt;IMG 
+SRC="images/bird.jpg"&gt;</CODE><I>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;В папке 
+images, которая лежит в одной папке с вашим HTML-файлом, независимо от 
+машины</I></P>
+<P>Относительные адреса очень удобны для разработчика HTML-страниц. В случае, 
+когда страница делается для установки на Web-сервере, ссылки имеют несколько 
+более сложный вид (см. соотв. раздел).</P>
+<P>Возможны также <B><I>внутренние ссылки</I></B>, т.е. ссылки не на начало, а 
+внутрь страницы. Они устанавливаются с помощью параметра <CODE>NAME</CODE> (см. 
+<A 
+href="javascript:window.open('table-5.htm','example','scrollbars,resizable,width=600,height=600,left=0,top=0');void(0);">табл. 
+5</A>), указывающей цель ссылки и определяющей имя цели. Это имя со знаком 
+<CODE>#</CODE> перед ним записывается в параметре <CODE>HREF</CODE> или 
+<CODE>USEMAP</CODE> (см.<A 
+href="javascript:window.open('table-4.htm','example','scrollbars,resizable,width=600,height=600,left=0,top=0');void(0);"> 
+табл. 4</A> и <A 
+href="javascript:window.open('table-5.htm','example','scrollbars,resizable,width=600,height=600,left=0,top=0');void(0);">табл. 
+5</A>) сразу после ссылки на страницу (если это ссылка на ту же страницу, то она 
+не указывается, см. рис. 3). 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</P>
+<P><B><I>Пример</I>:</B><BR><CODE>&lt;A 
+HREF="Ivanov.htm#Biography"&gt;Иванов&lt;/A&gt;</CODE><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<I>Ссылка 
+на тот раздел страницы Ivanov.htm, где внутри команды</I> <CODE>&lt;A 
+NAME="Biography"&gt;...&lt;/A&gt;</CODE> <I>записана биография Иванова</I> </P>
+<P><B><I>Чувствительными изображениями</I> </B>называют картинки на 
+HTML-странице, от которых идут гиперсвязи. Эти картинки "чувствительны" к щелчку 
+мыши. Чтобы создать чувствительную картинку с одной гиперсвязью, достаточно 
+написать 
+команды<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<CODE>&lt;A 
+HREF="Ivanov.htm#Biography"&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;IMG 
+SRC="Ivanov.jpg"&gt; Иванов &lt;/A&gt;</CODE> (слово <CODE>Иванов</CODE> не 
+обязательно, если достаточно его портрета).</P>
+<P>Но HTML позволяет создавать картинки, от разных частей которых идут разные 
+гиперсвязи. Это так называемые <B><I>чувствительные карты</I></B>. Они создаются 
+с помощью команд <CODE>&lt;MAP&gt;, &lt;AREA&gt;</CODE> (<A 
+href="javascript:window.open('table-5.htm','example','scrollbars,resizable,width=600,height=600,left=0,top=0');void(0);">табл. 
+5</A>) и параметра <CODE>USEMAP</CODE> команды <CODE>&lt;IMG&gt;</CODE> (<A 
+href="javascript:window.open('table-4.htm','example','scrollbars,resizable,width=600,height=600,left=0,top=0');void(0);">табл. 
+4</A>). Пример приведён на рис. 3.</P>
+<P>&nbsp;</P>
+<CENTER>
+<H4 align=center><A mame="tabl">1.2.4. Таблицы</H4></A></CENTER>
+<P><B><I>Таблицы</I></B> служат для улучшения форматирования HTML-страниц, в 
+которых требуется сохранение взаимного расположения текста, графики, колонок и 
+пр. при изменении размеров окна браузера и шрифтов. Команды и их параметры для 
+создания таблиц приведены в <A 
+href="javascript:window.open('table-6.htm','example','fullscreen,scrollbars,resizable');void(0);">табл. 
+6</A>, а пример описания таблицы &#8211; на рис. 3. Правила написания этих команд 
+следующие:</P>
+<UL>
+  <LI>Описание таблицы должно находиться между <I>командами таблицы</I> 
+  <CODE>&lt;TABLE&gt;...&lt;/TABLE&gt;</CODE>. 
+  <LI>Между командами <CODE>&lt;TABLE&gt;...&lt;/TABLE&gt;</CODE> должны 
+  находиться только <I>команда заголовка таблицы</I> 
+  <CODE>&lt;CAPTION&gt;...&lt;/CAPTION&gt;</CODE> и <I>команды строки</I> 
+  <CODE>&lt;TR&gt;...&lt;/TR&gt;</CODE>. 
+  <LI>Между командами строки <CODE>&lt;TR&gt;...&lt;/TR&gt;</CODE> должны 
+  находиться только команды ячеек <CODE>&lt;TD&gt;...&lt;/TD&gt; </CODE>и 
+  <CODE>&lt;TH&gt;...&lt;/TH&gt;</CODE>. 
+  <LI>Между командами ячеек <CODE>&lt;TD&gt;...&lt;/TD&gt;</CODE> может 
+  находиться описание <I>вложенной</I> таблицы. 
+  <LI>Высота строки определяется максимальной высотой её ячеек. 
+  <LI><I>N</I>-й столбец таблицы составляют <I>N</I>-е ячейки её строк. Ширина 
+  столбца определяется максимальной шириной его ячеек. 
+  <LI>Параметры <CODE>COLSPAN</CODE> и <CODE>ROWSPAN</CODE>, позволяющие 
+  объединять соседние ячейки столбца или строки, не влияют на ширину строки и 
+  высоту столбца. </LI></UL>
+<P>А теперь рассмотрим язык HTML более детально с помощью примеров</P>
+<P>
+<CENTER>
+<P><FONT size=-1><A 
+href="glava1.html">Назад</A> 
+| <A 
+href="index.html">Содержание</A> 
+| <A 
+href="glava1_1.html">Вперед</A></FONT></CENTER></P>
+<CENTER></CENTER></BODY></HTML>
